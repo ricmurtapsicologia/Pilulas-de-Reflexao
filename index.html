@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pílulas de Reflexão</title>
+	<!-- Configuração Open Graph para WhatsApp -->
+	<meta property="og:image" content="https://i.pinimg.com/736x/ca/bb/43/cabb43e707105693d9e5bbb5efcb1e69.jpg">
+	<meta property="og:url" content="https://ricmurtapsicologia.github.io/Pilulas-de-Reflexao/">
+	<style>
+		/* Estilização global */
+		body {
+		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		    margin: 0;
+		    padding: 0;
+		    background: url('https://i.pinimg.com/736x/ca/bb/43/cabb43e707105693d9e5bbb5efcb1e69.jpg') no-repeat center center fixed;
+		    background-size: cover;
+		    color: #333;
+		    box-sizing: border-box;
+		}
+		
+		header {
+		    background: rgba(0, 0, 0, 0.6);
+		    color: white;
+		    text-align: center;
+		    padding: 20px;
+		}
+		
+		header h1 {
+		    margin: 0;
+		    font-size: 2.5em;
+		    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+		}
+		
+		main {
+		    padding: 20px;
+		    max-width: 900px;
+		    margin: auto;
+		    background: rgba(255, 255, 255, 0.9);
+		    border-radius: 10px;
+		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		h2 {
+		    font-size: 1.8em;
+		    margin-bottom: 15px;
+		    color: #006400;
+		}
+		
+		.audio-section {
+		    margin-bottom: 30px;
+		    padding: 10px;
+		    border: 1px solid #ddd;
+		    border-radius: 10px;
+		    background: #f9f9f9;
+		}
+		
+		.audio-section h3 {
+		    font-size: 1.2em;
+		    margin-bottom: 10px;
+		    color: #006400;
+		    display: flex;
+		    align-items: center;
+		    gap: 10px;
+		}
+		
+		footer {
+		    text-align: center;
+		    margin-top: 20px;
+		    color: #fff;
+		    font-size: 1em;
+		    background: rgba(0, 0, 0, 0.7);
+		    padding: 10px;
+		}
+		
+		footer p {
+		    margin: 5px 0;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Pílulas de Reflexão</h1>
+	</header>
+	<main>
+		<h2>Lista de Podcasts</h2>
+		<div id="audio-list"></div>
+	</main>
+	<footer>
+		<p>Richelmy Murta, Psicólogo Clínico © 2024</p>
+		<p>Todos os direitos reservados</p>
+	</footer>
+	<script>
+		const audios = [
+		    {
+		        title: "PODCAST 000: REGISTRO DE PENSAMENTOS DISFUNCIONAIS",
+		        url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20000%20REGISTRO%20DE%20PENSAMENTOS%20DISFUNCIONAIS.mp3"
+		    },
+		    {
+		        title: "PODCAST 001: OUVIR NO FINAL DE DOMINGO",
+		        url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20001%20OUVIR%20NO%20FINAL%20DE%20DOMINGO.mp3"
+		    },
+		    {
+		        title: "PODCAST 002: LIDANDO COM PENSAMENTOS DE CONTROLE",
+		        url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20002%20LIDANDO%20COM%20PENSAMENTOS%20DE%20CONTROLE.mp3"
+		    },
+		    {
+		        title: "PODCAST 003: LIDANDO COM O FOMO",
+		        url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20003%20LIDANDO%20COM%20FOMO.mp3"
+		    }
+		];
+		
+		const audioList = document.getElementById('audio-list');
+		
+		audios.forEach(audio => {
+		    const section = document.createElement('div');
+		    section.classList.add('audio-section');
+		    section.innerHTML = `
+		        <h3>
+		            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="#006400">
+		                <path d="M8 3.993c-.245 0-.49.054-.715.162l-5 2.5A1 1 0 0 0 2 7.493v1c0 .379.214.725.545.912l5 2.5c.225.108.47.162.715.162a1 1 0 0 0 1-1V5.493a1 1 0 0 0-1-1z" />
+		            </svg>
+		            ${audio.title}
+		        </h3>
+		        <audio controls>
+		            <source src="${audio.url}" type="audio/mp3">
+		            Seu navegador não suporta o elemento de áudio. <a href="${audio.url}" download>Clique aqui para baixar</a>
+		        </audio>
+		    `;
+		    audioList.appendChild(section);
+		});
+	</script>
+</body>
+
+</html>
