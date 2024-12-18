@@ -2,136 +2,191 @@
 <html lang="pt-br">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pílulas de Reflexão</title>
-	<!-- Configuração Open Graph para WhatsApp -->
-	<meta property="og:image" content="https://i.pinimg.com/736x/ca/bb/43/cabb43e707105693d9e5bbb5efcb1e69.jpg">
-	<meta property="og:url" content="https://ricmurtapsicologia.github.io/Pilulas-de-Reflexao/">
-	<style>
-		/* Estilização global */
-		body {
-		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		    margin: 0;
-		    padding: 0;
-		    background: url('https://i.pinimg.com/736x/ca/bb/43/cabb43e707105693d9e5bbb5efcb1e69.jpg') no-repeat center center fixed;
-		    background-size: cover;
-		    color: #333;
-		    box-sizing: border-box;
-		}
-		
-		header {
-		    background: rgba(0, 0, 0, 0.6);
-		    color: white;
-		    text-align: center;
-		    padding: 20px;
-		}
-		
-		header h1 {
-		    margin: 0;
-		    font-size: 2.5em;
-		    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-		}
-		
-		main {
-		    padding: 20px;
-		    max-width: 900px;
-		    margin: auto;
-		    background: rgba(255, 255, 255, 0.9);
-		    border-radius: 10px;
-		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		}
-		
-		h2 {
-		    font-size: 1.8em;
-		    margin-bottom: 15px;
-		    color: #006400;
-		}
-		
-		.audio-section {
-		    margin-bottom: 30px;
-		    padding: 10px;
-		    border: 1px solid #ddd;
-		    border-radius: 10px;
-		    background: #f9f9f9;
-		}
-		
-		.audio-section h3 {
-		    font-size: 1.2em;
-		    margin-bottom: 10px;
-		    color: #006400;
-		    display: flex;
-		    align-items: center;
-		    gap: 10px;
-		}
-		
-		footer {
-		    text-align: center;
-		    margin-top: 20px;
-		    color: #fff;
-		    font-size: 1em;
-		    background: rgba(0, 0, 0, 0.7);
-		    padding: 10px;
-		}
-		
-		footer p {
-		    margin: 5px 0;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pílulas de Reflexão</title>
+    <!-- Configuração Open Graph para WhatsApp -->
+    <meta property="og:image" content="https://i.pinimg.com/736x/ca/bb/43/cabb43e707105693d9e5bbb5efcb1e69.jpg">
+    <meta property="og:url" content="https://ricmurtapsicologia.github.io/Pilulas-de-Reflexao/">
+    <style>
+        /* Estilização global */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.pinimg.com/736x/ca/bb/43/cabb43e707105693d9e5bbb5efcb1e69.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 3px solid #006400;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .intro {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f0f8f0;
+            border-left: 5px solid #006400;
+            border-radius: 8px;
+            text-align: justify;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #006400;
+        }
+
+        .audio-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f9f9f9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .audio-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+        }
+
+        .cta-button, .feedback-button {
+            display: inline-block;
+            text-align: center;
+            background-color: #006400;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-decoration: none;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover, .feedback-button:hover {
+            background-color: #004d00;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .intro h2 {
+                font-size: 1.5em;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            .audio-section {
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-	<header>
-		<h1>Pílulas de Reflexão</h1>
-	</header>
-	<main>
-		<h2>Lista de Podcasts</h2>
-		<div id="audio-list"></div>
-	</main>
-	<footer>
-		<p>Richelmy Murta, Psicólogo Clínico © 2024</p>
-		<p>Todos os direitos reservados</p>
-	</footer>
-	<script>
-		const audios = [
-		    {
-		        title: "PODCAST 000: REGISTRO DE PENSAMENTOS DISFUNCIONAIS",
-		        url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20000%20REGISTRO%20DE%20PENSAMENTOS%20DISFUNCIONAIS.mp3"
-		    },
-		    {
-		        title: "PODCAST 001: OUVIR NO FINAL DE DOMINGO",
-		        url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20001%20OUVIR%20NO%20FINAL%20DE%20DOMINGO.mp3"
-		    },
-		    {
-		        title: "PODCAST 002: LIDANDO COM PENSAMENTOS DE CONTROLE",
-		        url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20002%20LIDANDO%20COM%20PENSAMENTOS%20DE%20CONTROLE.mp3"
-		    },
-		    {
-		        title: "PODCAST 003: LIDANDO COM O FOMO",
-		        url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20003%20LIDANDO%20COM%20FOMO.mp3"
-		    }
-		];
-		
-		const audioList = document.getElementById('audio-list');
-		
-		audios.forEach(audio => {
-		    const section = document.createElement('div');
-		    section.classList.add('audio-section');
-		    section.innerHTML = `
-		        <h3>
-		            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="#006400">
-		                <path d="M8 3.993c-.245 0-.49.054-.715.162l-5 2.5A1 1 0 0 0 2 7.493v1c0 .379.214.725.545.912l5 2.5c.225.108.47.162.715.162a1 1 0 0 0 1-1V5.493a1 1 0 0 0-1-1z" />
-		            </svg>
-		            ${audio.title}
-		        </h3>
-		        <audio controls>
-		            <source src="${audio.url}" type="audio/mp3">
-		            Seu navegador não suporta o elemento de áudio. <a href="${audio.url}" download>Clique aqui para baixar</a>
-		        </audio>
-		    `;
-		    audioList.appendChild(section);
-		});
-	</script>
+    <header>
+        <h1>Pílulas de Reflexão</h1>
+    </header>
+    <main>
+        <section class="intro">
+            <h2>Pequenas Reflexões, Grandes Transformações</h2>
+            <p>
+                Bem-vindo ao <strong>Pílulas de Reflexão</strong>, um espaço criado para inspirar e transformar sua vida com pequenas reflexões. Ouça nossos podcasts, repense comportamentos, compreenda emoções e dê o primeiro passo para cuidar da sua saúde mental.
+            </p>
+            <p>
+                Reserve apenas alguns minutos do seu dia, aperte o play e descubra como pequenas mudanças podem levar a grandes transformações. <strong>Seu bem-estar merece atenção!</strong>
+            </p>
+            <p style="text-align: center;">
+                <a href="#audio-list" class="cta-button">Ouça os Podcasts Agora</a>
+            </p>
+        </section>
+
+        <h2>Lista de Podcasts</h2>
+        <div id="audio-list"></div>
+
+        <p id="progress" style="text-align: center; margin-top: 10px; font-size: 1em; color: #006400;">
+            0 de 4 podcasts ouvidos
+        </p>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="https://wa.me/?text=🎧%20Transforme%20sua%20rotina%20com%20pequenas%20reflex%C3%B5es!%20Acesse%20os%20podcasts%20P%C3%ADlulas%20de%20Reflex%C3%A3o%20e%20d%C3%AA%20o%20primeiro%20passo%20para%20uma%20vida%20mais%20equilibrada%20e%20leve.%20Ou%C3%A7a%20agora:%20https://ricmurtapsicologia.github.io/Pilulas-de-Reflexao/" 
+               target="_blank" class="cta-button">
+                Compartilhe no WhatsApp
+            </a>
+            <a href="https://wa.me/5535984640729?text=Ol%C3%A1%2C%20gostaria%20de%20dar%20um%20feedback%20sobre%20os%20podcasts%20P%C3%ADlulas%20de%20Reflex%C3%A3o." 
+               target="_blank" class="feedback-button">
+                Enviar Feedback
+            </a>
+        </div>
+    </main>
+    <footer>
+        <p>Richelmy Murta, Psicólogo Clínico © 2024</p>
+        <p>Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        const audios = [
+            { title: "PODCAST 000: REGISTRO DE PENSAMENTOS DISFUNCIONAIS", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20000%20REGISTRO%20DE%20PENSAMENTOS%20DISFUNCIONAIS.mp3" },
+            { title: "PODCAST 001: OUVIR NO FINAL DE DOMINGO", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20001%20OUVIR%20NO%20FINAL%20DE%20DOMINGO.mp3" },
+            { title: "PODCAST 002: LIDANDO COM PENSAMENTOS DE CONTROLE", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20002%20LIDANDO%20COM%20PENSAMENTOS%20DE%20CONTROLE.mp3" },
+            { title: "PODCAST 003: LIDANDO COM O FOMO", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20003%20LIDANDO%20COM%20FOMO.mp3" }
+        ];
+
+        const audioList = document.getElementById('audio-list');
+        const progressText = document.getElementById('progress');
+        let listenedCount = 0;
+
+        audios.forEach(audio => {
+            const section = document.createElement('div');
+            section.classList.add('audio-section');
+            section.innerHTML = `
+                <h3>${audio.title}</h3>
+                <audio controls>
+                    <source src="${audio.url}" type="audio/mp3">
+                    Seu navegador não suporta o elemento de áudio. <a href="${audio.url}" download>Clique aqui para baixar</a>
+                </audio>
+            `;
+            section.querySelector('audio').addEventListener('ended', () => {
+                listenedCount++;
+                progressText.textContent = `${listenedCount} de ${audios.length} podcasts ouvidos`;
+            });
+            audioList.appendChild(section);
+        });
+    </script>
 </body>
 
 </html>
