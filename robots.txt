@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ricmurtapsicologia.github.io/Pilulas-de-Reflexao/sitemap.xml
