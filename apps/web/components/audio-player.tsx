@@ -1,0 +1,14 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import { Pause, Play, RotateCcw, RotateCw } from 'lucide-react';
+
+export function AudioPlayer({id,title,src}:{id:string;title:string;src:string}){
+  const audio=useRef<HTMLAudioElement>(null); const [playing,setPlaying]=useState(false); const [duration,setDuration]=useState(0); const [time,setTime]=useState(0); const [speed,setSpeed]=useState(1);
+  const key=`pilulas:position:${id}`;
+  useEffect(()=>{const a=audio.current;if(!a)return; const onLoaded=()=>{setDuration(a.duration||0);const saved=Number(localStorage.getItem(key)||0);if(saved>0&&saved<a.duration-5)a.currentTime=saved};const onTime=()=>{setTime(a.currentTime);if(Math.floor(a.currentTime)%5===0)localStorage.setItem(key,String(Math.floor(a.currentTime)))};const onEnded=()=>{setPlaying(false);localStorage.removeItem(key);localStorage.setItem(`pilulas:completed:${id}`,'1')};a.addEventListener('loadedmetadata',onLoaded);a.addEventListener('timeupdate',onTime);a.addEventListener('ended',onEnded);return()=>{a.removeEventListener('loadedmetadata',onLoaded);a.removeEventListener('timeupdate',onTime);a.removeEventListener('ended',onEnded)}} ,[id,key]);
+  const toggle=()=>{const a=audio.current;if(!a)return;if(a.paused){void a.play();setPlaying(true)}else{a.pause();setPlaying(false)}};
+  const jump=(n:number)=>{const a=audio.current;if(a)a.currentTime=Math.max(0,Math.min(a.duration||0,a.currentTime+n))};
+  const format=(n:number)=>`${Math.floor(n/60)}:${Math.floor(n%60).toString().padStart(2,'0')}`;
+  return <div className="player-shell"><audio ref={audio} src={src} preload="metadata"/><div className="player-title">{title}</div><div className="player-meta">Áudio legado em revisão editorial e sonora</div><div style={{display:'grid',gridTemplateColumns:'auto 1fr auto',gap:12,alignItems:'center',marginTop:16}}><span>{format(time)}</span><input aria-label="Posição do áudio" type="range" min={0} max={duration||0} value={time} onChange={e=>{if(audio.current)audio.current.currentTime=Number(e.target.value)}}/><span>{format(duration)}</span></div><div style={{display:'flex',gap:8,alignItems:'center',marginTop:12,flexWrap:'wrap'}}><button className="btn" onClick={()=>jump(-10)} aria-label="Voltar 10 segundos"><RotateCcw size={16}/>10 s</button><button className="btn" onClick={toggle} aria-label={playing?'Pausar':'Reproduzir'}>{playing?<Pause size={18}/>:<Play size={18}/>} {playing?'Pausar':'Ouvir'}</button><button className="btn" onClick={()=>jump(10)} aria-label="Avançar 10 segundos">10 s<RotateCw size={16}/></button><label className="badge">Velocidade <select value={speed} onChange={e=>{const v=Number(e.target.value);setSpeed(v);if(audio.current)audio.current.playbackRate=v}}><option value="0.75">0,75×</option><option value="1">1×</option><option value="1.25">1,25×</option><option value="1.5">1,5×</option></select></label></div></div>;
+}
