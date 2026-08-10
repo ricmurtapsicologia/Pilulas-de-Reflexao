@@ -1,0 +1,18 @@
+{
+  "name":"pilulas-de-reflexao",
+  "version":"2.5.0",
+  "private":true,
+  "packageManager":"pnpm@10.15.0",
+  "scripts":{
+    "dev":"pnpm --filter @pilulas/web dev",
+    "build":"pnpm --filter @pilulas/web build",
+    "typecheck":"pnpm --filter @pilulas/web typecheck",
+    "video:studio":"pnpm --filter @pilulas/video studio",
+    "audio:render":"node scripts/render-tts-openai.mjs",
+    "audio:build":"node scripts/audio-build-all.mjs",
+    "audio:master":"node scripts/audio-master.mjs",
+    "audio:qc":"node scripts/audio-qc.mjs",
+    "readiness":"node scripts/readiness-report.mjs",
+    "validate":"node tests/validate-v25.mjs"
+  }
+}

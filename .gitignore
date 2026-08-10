@@ -1,0 +1,25 @@
+# dependencies / builds
+node_modules/
+.pnpm-store/
+.next/
+out/
+dist/
+.vercel/
+
+# environment / secrets
+.env
+.env.*
+!.env.example
+apps/**/.env.local
+
+# generated audio/video work products
+media/work/
+media/source/
+media/masters/
+media/renders/
+apps/video/out/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log

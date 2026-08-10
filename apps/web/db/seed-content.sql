@@ -1,0 +1,22 @@
+INSERT INTO content_items (id,slug,title,access,published,version) VALUES
+('pr-001','pensamento-nao-e-fato','Pensamento não é fato','free',true,'2.5.0'),
+('pr-002','registro-de-pensamentos','Registro de pensamentos na prática','free',true,'2.5.0'),
+('pr-003','quando-um-pensamento-nao-vai-embora','Quando um pensamento não vai embora','free',true,'2.5.0'),
+('pr-004','ruminacao-quando-pensar-nao-ajuda','Ruminação: quando pensar deixa de ajudar','free',true,'2.5.0'),
+('pr-005','conviver-com-a-incerteza','Quando não existe certeza suficiente','premium',true,'2.5.0'),
+('pr-006','ansiedade-o-corpo-em-alerta','Ansiedade: o corpo em alerta','free',true,'2.5.0'),
+('pr-007','quando-a-tristeza-pede-espaco','Quando a tristeza pede espaço','premium',true,'2.5.0'),
+('pr-008','antes-da-irritacao-explodir','Antes da irritação explodir','premium',true,'2.5.0'),
+('pr-009','inseguranca-e-confianca','Insegurança não precisa decidir por você','premium',true,'2.5.0'),
+('pr-010','aja-antes-de-se-sentir-pronto','Aja antes de se sentir totalmente pronto','free',true,'2.5.0'),
+('pr-011','o-ciclo-da-evitacao','O ciclo da evitação','premium',true,'2.5.0'),
+('pr-012','procrastinacao-e-o-proximo-passo','Procrastinação e o próximo passo','premium',true,'2.5.0'),
+('pr-013','retornar-ao-presente','Uma pausa para retornar ao presente','free',true,'2.5.0'),
+('pr-014','aterramento-pelos-sentidos','Aterramento pelos sentidos','premium',true,'2.5.0'),
+('pr-015','pausa-entre-impulso-e-acao','Uma pausa entre impulso e ação','premium',true,'2.5.0'),
+('pr-016','fomo-e-comparacao','FOMO: quando parece que todos estão vivendo mais','premium',true,'2.5.0'),
+('pr-017','tedio-e-inquietacao','Quando tudo parece tédio ou inquietação','premium',true,'2.5.0'),
+('pr-018','renovar-o-domingo','Fechando o domingo com menos cobrança','free',true,'2.5.0'),
+('pr-019','valores-nao-sao-metas','Valores não são metas','premium',true,'2.5.0'),
+('pr-020','o-critico-dentro-da-cabeca','O crítico dentro da cabeça','premium',true,'2.5.0')
+ON CONFLICT (id) DO UPDATE SET slug=EXCLUDED.slug,title=EXCLUDED.title,access=EXCLUDED.access,published=EXCLUDED.published,version=EXCLUDED.version;
