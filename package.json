@@ -1,0 +1,14 @@
+{
+  "name":"pilulas-de-reflexao",
+  "version":"2.5.0",
+  "private":true,
+  "packageManager":"pnpm@10.15.0",
+  "scripts":{
+    "dev":"pnpm --filter @pilulas/web dev",
+    "build":"pnpm --filter @pilulas/web build",
+    "typecheck":"pnpm --filter @pilulas/web typecheck",
+    "video:studio":"pnpm --filter @pilulas/video studio",
+    "audio:qc":"node scripts/audio-qc.mjs",
+    "validate":"node tests/validate-v25.mjs"
+  }
+}
