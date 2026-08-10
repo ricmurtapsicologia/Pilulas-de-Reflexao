@@ -1,0 +1,38 @@
+name: V2.5 Commercial & Audio Gate
+
+on:
+  push:
+    branches: [v2.5-commercial-audio]
+  pull_request:
+    branches: [main]
+    paths:
+      - 'apps/web/**'
+      - 'apps/video/**'
+      - 'content/audio/**'
+      - 'scripts/audio-*.mjs'
+      - 'scripts/render-tts-openai.mjs'
+      - 'tests/validate-v25.mjs'
+      - 'package.json'
+      - 'pnpm-workspace.yaml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Structural and editorial gate
+        run: node tests/validate-v25.mjs
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Typecheck web
+        run: pnpm --filter @pilulas/web typecheck
+      - name: Build web
+        env:
+          NEXT_PUBLIC_APP_URL: https://staging.example.com
+        run: pnpm --filter @pilulas/web build
