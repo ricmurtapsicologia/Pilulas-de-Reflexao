@@ -1,0 +1,19 @@
+{
+  "name": "Pílulas de Reflexão",
+  "short_name": "Pílulas",
+  "description": "Microexperiências psicoeducativas para compreender pensamentos, emoções e pequenas possibilidades de ação.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f1ea",
+  "theme_color": "#234a42",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "./assets/brand/mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
