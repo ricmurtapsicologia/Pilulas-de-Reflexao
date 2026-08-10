@@ -1,0 +1,6 @@
+production-requested-at: 2026-08-10T03:15:00Z
+voice: pm_alex
+model: hexgrad/Kokoro-82M
+language: pt-BR
+scope: pr-001..pr-020
+quality: premium
