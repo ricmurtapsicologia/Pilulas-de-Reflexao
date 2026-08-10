@@ -1,0 +1,88 @@
+name: Audio V3 — Pilot and QC
+
+on:
+  push:
+    branches: [v3-multimodal-audio]
+    paths:
+      - 'content/audio/**'
+      - 'scripts/**'
+      - 'package.json'
+      - '.github/workflows/audio-v3.yml'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Lote a gerar'
+        required: true
+        default: 'pilot'
+        type: choice
+        options:
+          - pilot
+          - all
+
+permissions:
+  contents: write
+
+concurrency:
+  group: audio-v3-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: v3-multimodal-audio
+          fetch-depth: 0
+
+      - name: Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Verificar credencial TTS
+        id: credential
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -n "$OPENAI_API_KEY" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "OPENAI_API_KEY não está configurada; pipeline instalado, geração não executada."
+          fi
+
+      - name: Gerar pilotos PR-001, PR-008 e PR-013
+        if: steps.credential.outputs.configured == 'true' && (github.event_name == 'push' || inputs.mode == 'pilot')
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_TTS_MODEL: gpt-4o-mini-tts
+          OPENAI_TTS_VOICE: cedar
+        run: npm run audio:pilot
+
+      - name: Gerar catálogo completo
+        if: steps.credential.outputs.configured == 'true' && github.event_name == 'workflow_dispatch' && inputs.mode == 'all'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_TTS_MODEL: gpt-4o-mini-tts
+          OPENAI_TTS_VOICE: cedar
+        run: npm run audio:all
+
+      - name: Persistir masters aprovados
+        if: steps.credential.outputs.configured == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/audio/*.mp3 data/audio-v3.json || true
+          if git diff --cached --quiet; then
+            echo "Nenhuma mídia nova para persistir."
+          else
+            git commit -m "audio(v3): publica masters aprovados pelo QC"
+            git push origin HEAD:v3-multimodal-audio
+          fi
