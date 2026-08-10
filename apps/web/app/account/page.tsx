@@ -1,0 +1,5 @@
+import { auth, currentUser } from '@clerk/nextjs/server';
+import { redirect } from 'next/navigation';
+
+export const metadata={title:'Minha conta'};
+export default async function Account(){const {userId}=await auth();if(!userId)redirect('/sign-in?redirect_url=/account');const user=await currentUser();return <main id="conteudo"><section className="section"><div className="shell"><p className="eyebrow">Conta sincronizada</p><h1 className="section-title">{user?.firstName?`Olá, ${user.firstName}.`:'Sua conta'}</h1><p className="lede">A conta guarda acesso, favoritos e progresso sincronizável. Textos de reflexão não pertencem a este banco de dados.</p><div className="track-grid" style={{marginTop:30}}><article className="track-card"><h3>Progresso</h3><p>Sincronização será ativada após o banco de staging ser provisionado.</p></article><article className="track-card"><h3>Acesso</h3><p>Entitlements: livre, premium, paciente ou institucional.</p></article><article className="track-card"><h3>Privacidade</h3><p>O modo sem conta continua disponível para conteúdo livre.</p></article></div></div></section></main>}
