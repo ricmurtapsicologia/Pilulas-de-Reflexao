@@ -12,6 +12,7 @@
     "audio:build":"node scripts/audio-build-all.mjs",
     "audio:master":"node scripts/audio-master.mjs",
     "audio:qc":"node scripts/audio-qc.mjs",
+    "readiness":"node scripts/readiness-report.mjs",
     "validate":"node tests/validate-v25.mjs"
   }
 }
