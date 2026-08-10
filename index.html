@@ -1,213 +1,203 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<!doctype html>
+<html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pílulas de Reflexão</title>
-	<!-- Configuração Open Graph para WhatsApp -->
-	<meta property="og:image" content="https://i.pinimg.com/736x/ca/bb/43/cabb43e707105693d9e5bbb5efcb1e69.jpg">
-	<meta property="og:url" content="https://ricmurtapsicologia.github.io/Pilulas-de-Reflexao/">
-	<style>
-		/* Estilização global */
-		body {
-		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		    margin: 0;
-		    padding: 0;
-		    background: url('https://i.pinimg.com/736x/ca/bb/43/cabb43e707105693d9e5bbb5efcb1e69.jpg') no-repeat center center fixed;
-		    background-size: cover;
-		    color: #333;
-		}
-		
-		@media (max-width: 768px) {
-		    body {
-		        background-attachment: scroll;
-		        background-position: center center;
-		    }
-		}
-		
-		header {
-		    background: rgba(0, 0, 0, 0.7);
-		    color: white;
-		    text-align: center;
-		    padding: 20px;
-		    border-bottom: 3px solid #006400;
-		}
-		
-		header h1 {
-		    margin: 0;
-		    font-size: 2.5em;
-		    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-		}
-		
-		main {
-		    padding: 20px;
-		    max-width: 900px;
-		    margin: 20px auto;
-		    background: rgba(255, 255, 255, 0.95);
-		    border-radius: 10px;
-		    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-		}
-		
-		.intro {
-		    margin-bottom: 30px;
-		    padding: 20px;
-		    background: #f0f8f0;
-		    border-left: 5px solid #006400;
-		    border-radius: 8px;
-		    text-align: justify;
-		    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-		}
-		
-		h2 {
-		    font-size: 1.8em;
-		    margin-bottom: 15px;
-		    color: #006400;
-		}
-		
-		.audio-section {
-		    margin-bottom: 30px;
-		    padding: 15px;
-		    border: 1px solid #ddd;
-		    border-radius: 10px;
-		    background: #f9f9f9;
-		    transition: transform 0.3s ease, box-shadow 0.3s ease;
-		}
-		
-		.audio-section:hover {
-		    transform: translateY(-5px);
-		    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-		}
-		
-		footer {
-		    text-align: center;
-		    color: #fff;
-		    background: rgba(0, 0, 0, 0.7);
-		    padding: 10px;
-		}
-		
-		.cta-button {
-		    display: block;
-		    width: 220px;
-		    margin: 20px auto;
-		    text-align: center;
-		    background-color: #006400;
-		    color: #fff;
-		    padding: 10px;
-		    border-radius: 5px;
-		    text-decoration: none;
-		    font-size: 1.2em;
-		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-		    transition: background 0.3s ease;
-		}
-		
-		.cta-button:hover {
-		    background-color: #004d00;
-		}
-		
-		.feedback-button,
-		.share-button {
-		    display: inline-flex;
-		    align-items: center;
-		    gap: 10px;
-		    text-align: center;
-		    padding: 10px 20px;
-		    margin: 10px;
-		    border-radius: 5px;
-		    font-size: 1.2em;
-		    text-decoration: none;
-		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-		    transition: transform 0.3s ease;
-		}
-		
-		.feedback-button {
-		    background-color: #005f73;
-		    color: #fff;
-		}
-		
-		.share-button {
-		    background-color: #25D366;
-		    color: #fff;
-		}
-		
-		.feedback-button:hover,
-		.share-button:hover {
-		    transform: translateY(-3px);
-		}
-		
-		.buttons-container {
-		    display: flex;
-		    justify-content: center;
-		    gap: 20px;
-		    flex-wrap: wrap;
-		    margin-top: 20px;
-		}
-	</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Pílulas de Reflexão | Richelmy Murta Psicologia</title>
+  <meta name="description" content="Microexperiências psicoeducativas em áudio, texto e recursos visuais para compreender pensamentos, emoções e pequenas possibilidades de ação.">
+  <meta name="theme-color" content="#234a42">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ricmurtapsicologia.github.io/Pilulas-de-Reflexao/">
+  <link rel="icon" href="./assets/brand/mark.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Pílulas de Reflexão">
+  <meta property="og:description" content="Alguns minutos para compreender melhor o que acontece dentro de você — e experimentar uma forma diferente de responder.">
+  <meta property="og:url" content="https://ricmurtapsicologia.github.io/Pilulas-de-Reflexao/">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./assets/js/app.js" defer></script>
 </head>
-
 <body>
-	<header>
-		<h1>Pílulas de Reflexão</h1>
-	</header>
-	<main>
-		<section class="intro">
-			<h2>Pequenas Reflexões, Grandes Transformações</h2>
-			<p> Bem-vindo ao <strong>Pílulas de Reflexão</strong>, um espaço criado para inspirar e transformar sua vida com pequenas reflexões. Ouça nossos podcasts, <strong>repense comportamentos</strong>, <strong>compreenda emoções</strong> e <em>dê o primeiro passo</em> para cuidar da sua saúde mental. </p>
-			<p> Reserve apenas alguns minutos do seu dia, <em>aperte o play</em> e descubra como pequenas mudanças podem levar a <strong>grandes transformações</strong>. <strong><em>Seu bem-estar merece atenção!</em></strong>
-			</p>
-			<p style="text-align: center;">
-				<a href="#audio-list" class="cta-button">Ouça os Podcasts Agora</a>
-			</p>
-		</section>
-		<h2>Lista de Podcasts</h2>
-		<div id="audio-list"></div>
-		<p id="progress" style="text-align: center; margin-top: 10px; font-size: 1em; color: #006400;"> 0 de 4 podcasts ouvidos </p>
-		<div class="buttons-container">
-			<a href="https://wa.me/?text=🎧%20Transforme%20sua%20rotina%20com%20pequenas%20reflex%C3%B5es!%20Ou%C3%A7a%20agora:%20https://ricmurtapsicologia.github.io/Pilulas-de-Reflexao/" target="_blank" class="share-button">
-				<img src="https://img.icons8.com/color/48/000000/whatsapp.png" width="24" alt="WhatsApp"> Compartilhe no WhatsApp </a>
-			<a href="https://wa.me/5535984640729?text=Ol%C3%A1%2C%20gostaria%20de%20dar%20um%20feedback%20sobre%20os%20podcasts%20P%C3%ADlulas%20de%20Reflex%C3%A3o." target="_blank" class="feedback-button">
-				<img src="https://img.icons8.com/ios-filled/50/ffffff/feedback.png" width="24" alt="Feedback"> Enviar Feedback </a>
-		</div>
-	</main>
-	<footer>
-		<p>Richelmy Murta, Psicólogo Clínico © 2025</p>
-		<p>Todos os direitos reservados</p>
-	</footer>
-	<script>
-		const audios = [
-                { title: "PODCAST 000: Transforme Sua Mente: Registro de Pensamentos Disfuncionais", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20000%20REGISTRO%20DE%20PENSAMENTOS%20DISFUNCIONAIS.mp3" },
-                { title: "PODCAST 001: Renove Seu Domingo: Ouça no Final do Dia", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20001%20OUVIR%20NO%20FINAL%20DE%20DOMINGO.mp3" },
-                { title: "PODCAST 002: Assuma o Controle: Lidando com Pensamentos Intrusivos", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20002%20LIDANDO%20COM%20PENSAMENTOS%20DE%20CONTROLE.mp3" },
-                { title: "PODCAST 003: Supere o Medo de Ficar de Fora – Viva o Presente", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20003%20LIDANDO%20COM%20FOMO.mp3" },
-                { title: "PODCAST 004: Quebre o Ciclo: Tédio e Angústia no Pêndulo de Schopenhauer", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20004%20LIDANDO%20COM%20O%20T%C3%89DIO.mp3" },
-                { title: "PODCAST 005: Fortaleça Sua Confiança: Vença a Insegurança", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20005%20SUPERANDO%20INSEGURAN%C3%87A.mp3" },
-                { title: "PODCAST 006: Faça Acontecer: Finja Até Ser Verdade", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20006%20FINJA%20AT%C3%89%20SER%20VERDADE.mp3" },
-                { title: "PODCAST 007: Acalme Sua Mente – Meditação Guiada", url: "https://github.com/ricmurtapsicologia/Pilulas-de-Reflexao/raw/main/PODCAST%20007%20MEDITA%C3%87%C3%83O%20GUIADA.mp3" }
-                ];
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-		
-		
-		const audioList = document.getElementById('audio-list');
-		const progressText = document.getElementById('progress');
-		let listenedCount = 0;
-		
-		audios.forEach(audio => {
-		    const section = document.createElement('div');
-		    section.classList.add('audio-section');
-		    section.innerHTML = `
-		        <h3>${audio.title}</h3>
-		        <audio controls>
-		            <source src="${audio.url}" type="audio/mp3">
-		            Seu navegador não suporta o elemento de áudio. <a href="${audio.url}" download>Clique aqui para baixar</a>
-		        </audio>
-		    `;
-		    section.querySelector('audio').addEventListener('ended', () => {
-		        listenedCount++;
-		        progressText.textContent = `${listenedCount} de ${audios.length} podcasts ouvidos`;
-		    });
-		    audioList.appendChild(section);
-		});
-	</script>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="./" aria-label="Pílulas de Reflexão — início">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="./assets/brand/mark.svg" width="28" height="28" alt="">
+        </span>
+        <span>Pílulas de Reflexão</span>
+      </a>
+      <nav class="nav-actions" aria-label="Navegação principal">
+        <a class="nav-link" href="#trilhas">Trilhas</a>
+        <a class="nav-link" href="#biblioteca">Biblioteca</a>
+        <a class="nav-link" href="#sobre">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Psicoeducação · reflexão · prática</p>
+          <h1>Uma pausa curta pode abrir espaço para uma resposta diferente.</h1>
+          <p class="hero-copy">Alguns minutos para compreender melhor pensamentos, emoções e comportamentos — sem obrigação de resolver tudo agora.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#agora">O que você precisa agora?</a>
+            <a class="secondary-button" href="#biblioteca">Explorar todas as pílulas</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" id="agora" aria-labelledby="need-title">
+          <p class="section-kicker">Comece pelo que faz sentido</p>
+          <h2 id="need-title">Como você está chegando aqui?</h2>
+          <p>Escolha uma situação cotidiana. A indicação organiza conteúdos; não faz diagnóstico.</p>
+          <div class="need-grid" id="need-grid" aria-label="Necessidades atuais"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section recommendation" id="recomendacao" aria-labelledby="recommendation-title">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Uma possibilidade de começo</p>
+            <h2 id="recommendation-title">Pílula do momento</h2>
+            <p class="section-intro">Você continua livre para escolher qualquer conteúdo da biblioteca.</p>
+          </div>
+        </div>
+        <div class="recommendation-card" id="recommendation-card" aria-live="polite">
+          <div>
+            <div class="section-kicker">Carregando</div>
+            <h3>Preparando uma sugestão…</h3>
+            <p>A biblioteca está sendo organizada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trilhas" aria-labelledby="tracks-title">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Percursos temáticos</p>
+            <h2 id="tracks-title">Escolha uma trilha</h2>
+            <p class="section-intro">As trilhas organizam habilidades relacionadas. Você pode seguir a sequência ou entrar diretamente na pílula que mais combina com o momento.</p>
+          </div>
+        </div>
+        <div class="track-grid" id="track-grid"></div>
+
+        <aside class="progress-panel" id="progress-panel" aria-label="Seu progresso neste dispositivo">
+          <div class="progress-row">
+            <strong>Sua jornada neste dispositivo</strong>
+            <span id="progress-label">0 experiências concluídas</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="Progresso geral" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <p class="micro-note">Esse progresso fica somente neste navegador. Não há conta, ranking, sequência obrigatória ou envio de dados clínicos.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="biblioteca" aria-labelledby="library-title">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Biblioteca</p>
+            <h2 id="library-title">Encontre uma pílula</h2>
+            <p class="section-intro">Áudios existentes foram preservados. Novos conteúdos entram como leitura e microvisual até que sua mídia própria esteja validada.</p>
+          </div>
+          <span class="micro-note" id="result-count" aria-live="polite"></span>
+        </div>
+
+        <div class="library-tools">
+          <label class="search-wrap">
+            <span class="sr-only">Buscar pílulas</span>
+            <input id="search" type="search" inputmode="search" autocomplete="off" placeholder="Buscar por tema, habilidade ou palavra…">
+          </label>
+          <div class="filters" id="filters" aria-label="Filtrar por trilha"></div>
+        </div>
+
+        <div class="catalog" id="catalog" aria-live="polite">
+          <div class="empty-state">Carregando biblioteca…</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre" aria-labelledby="about-title">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Como usar</p>
+            <h2 id="about-title">Escute. Leia. Experimente. Leve uma coisa com você.</h2>
+            <p class="section-intro">A proposta não é consumir toda a biblioteca. Escolha uma experiência, observe o que ela desperta e use apenas o que fizer sentido para o seu momento.</p>
+          </div>
+        </div>
+
+        <div class="disclaimer">
+          <strong>Sobre este conteúdo.</strong> Pílulas de Reflexão oferece material psicoeducativo e de apoio à reflexão. Não realiza diagnóstico, não substitui avaliação individual e não deve ser tratado como atendimento psicológico de urgência ou como substituto de acompanhamento profissional quando ele for necessário. Reflexões escritas na sua própria vida não precisam ser enviadas para esta página.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <strong>Richelmy Murta · Psicologia Clínica</strong><br>
+        <span>Pílulas de Reflexão · 2026</span>
+      </div>
+      <div>
+        <a class="nav-link" href="https://wa.me/5535984640729?text=Ol%C3%A1%2C%20gostaria%20de%20dar%20um%20feedback%20sobre%20as%20P%C3%ADlulas%20de%20Reflex%C3%A3o." target="_blank" rel="noopener noreferrer">Enviar feedback</a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="dialog" id="pill-dialog" aria-labelledby="dialog-heading">
+    <div class="dialog-inner">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Fechar">×</button>
+      <div id="dialog-content"></div>
+    </div>
+  </dialog>
+
+  <section class="player" id="player" aria-label="Player de áudio" aria-live="polite">
+    <div class="player-grid">
+      <div>
+        <div class="player-title" id="player-title">Nenhum áudio selecionado</div>
+        <div class="player-subtitle" id="player-subtitle">Pílulas de Reflexão</div>
+      </div>
+
+      <div class="player-controls">
+        <button class="player-button" id="back-10" type="button" aria-label="Voltar 10 segundos">−10</button>
+        <button class="player-button primary" id="play-pause" type="button" aria-label="Reproduzir">▶</button>
+        <button class="player-button" id="forward-10" type="button" aria-label="Avançar 10 segundos">+10</button>
+      </div>
+
+      <div class="player-progress">
+        <span id="current-time">0:00</span>
+        <label>
+          <span class="sr-only">Posição do áudio</span>
+          <input id="seek" type="range" min="0" max="0" value="0" step="1">
+        </label>
+        <span id="duration">0:00</span>
+        <label>
+          <span class="sr-only">Velocidade</span>
+          <select id="speed" aria-label="Velocidade de reprodução">
+            <option value="0.75">0,75×</option>
+            <option value="1" selected>1×</option>
+            <option value="1.25">1,25×</option>
+            <option value="1.5">1,5×</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <audio id="global-audio" preload="metadata"></audio>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
-
 </html>
