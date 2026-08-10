@@ -1,79 +1,191 @@
 # Pílulas de Reflexão
 
-Biblioteca pública de microexperiências psicoeducativas em português do Brasil.
+Produto digital de microexperiências psicoeducativas em português do Brasil.
+
+> Branch `v2.5-commercial-audio`: base comercial/multimodal em validação. O `main` continua preservando a versão pública estática até que os gates de staging, mídia, acessibilidade e compliance sejam concluídos.
 
 ## Propósito
 
-A página organiza conteúdos breves para apoiar reflexão, psicoeducação e prática de habilidades psicológicas. O projeto não substitui avaliação, diagnóstico ou acompanhamento profissional individualizado.
+Pílulas de Reflexão combina áudio, leitura, microvisuais e pequenas experiências reflexivas. O produto não realiza diagnóstico e não se apresenta como psicoterapia automatizada. Conteúdo clínico individualizado e prontuário permanecem fora desta aplicação.
 
-## Arquitetura
+## Workspace V2.5
 
-- `index.html` — estrutura semântica da aplicação.
-- `assets/css/styles.css` — design system e responsividade.
-- `assets/js/app.js` — catálogo, filtros, recomendações, player e progresso local.
-- `data/pilulas.json` — fonte editorial única do catálogo.
-- `assets/brand/mark.svg` — marca vetorial própria.
-- `manifest.webmanifest` — metadados para experiência instalável.
+```text
+apps/
+  web/       Next.js 16, UI, auth, paywall, storage, pagamentos e Trust Center
+  video/     Remotion para microvídeos 16:9 e 9:16
+content/
+  audio/     manifesto e 20 roteiros V2.5
+media/       workspace local de source/master/render (binários ignorados pelo Git)
+scripts/     TTS, masterização, QC e orquestração de mídia
+tests/       gates estruturais/editoriais
+```
 
-Os arquivos MP3 legados permanecem na raiz para preservar compatibilidade com o acervo existente.
+A versão estática anterior (`index.html`, `assets/`, `data/`) continua no branch por compatibilidade e também é validada pelo workflow herdado.
 
-## Princípios do produto
+## Stack de referência
 
-1. Áudio é uma mídia, não o produto inteiro.
-2. Cada pílula precisa ter objetivo, habilidade, trilha, descrição, leitura e reflexão.
-3. A navegação deve partir de necessidades cotidianas, não de diagnósticos.
-4. O usuário pode ouvir, ler, refletir e sair sem fornecer dados pessoais.
-5. Progresso simples é mantido somente no navegador (`localStorage`).
-6. Conteúdo público não deve receber dados clínicos identificáveis por URL ou formulário.
-7. Novas mídias só são publicadas quando existem de fato; não são criados links fictícios.
+- Next.js / React / TypeScript;
+- Tailwind CSS + componentes proprietários sobre shadcn/Radix;
+- Geist para interface;
+- Lucide para iconografia funcional;
+- SVG proprietário para glyphs de trilha e marca;
+- `next/og` para OG/WhatsApp cards automáticos;
+- Clerk-ready authentication;
+- Neon + Drizzle para dados operacionais;
+- Stripe Checkout/Webhooks para assinatura e entitlements;
+- Vercel Blob privado para mídia premium;
+- Remotion para microvídeo;
+- FFmpeg/FFprobe para masterização e QC;
+- OpenAI Audio Speech parametrizado para renderização TTS quando houver chave configurada.
 
-## Modelo editorial de uma pílula
+## Design system
 
-Campos principais em `data/pilulas.json`:
+A linguagem visual não usa comprimidos, cérebros, lótus, corações ou fotografias clichês de sofrimento. A marca trabalha com pausa, espaço, perspectiva, movimento e integração.
 
-- `id`
-- `slug`
-- `title`
-- `track`
-- `skill`
-- `duration`
-- `format`
-- `description`
-- `reading`
-- `reflection`
-- `audioUrl` quando houver áudio
-- `visual` quando houver microvisual
-- `transcriptStatus` enquanto a transcrição literal estiver em revisão
+- `apps/web/components/glyphs.tsx` — símbolo e seis glyphs conceituais;
+- `apps/web/components/cover-art.tsx` — capas determinísticas a partir de `id + trilha`;
+- `apps/web/components/campaign-banner.tsx` — banners parametrizados;
+- `apps/web/components/clinical-visual.tsx` — diagramas clínicos reutilizáveis;
+- `/design-system` — Design Lab em código;
+- `/pilulas/[slug]/opengraph-image.tsx` — OG 1200×630 gerado automaticamente.
 
-## Governança clínica e editorial
+## Catálogo e acesso
 
-Antes da publicação definitiva de uma nova pílula, revisar:
+`apps/web/lib/catalog.ts` contém 20 pílulas V2.5 com nível de acesso:
 
-- objetivo clínico/psicoeducativo;
-- limites e riscos de interpretação;
-- clareza e adequação da linguagem;
-- coerência com a trilha;
-- acessibilidade;
-- referências quando necessárias;
-- versão e data de revisão.
+- `free`;
+- `premium`;
+- `patient`;
+- `institutional`.
 
-Para áudios existentes sem transcrição literal validada, a interface apresenta um resumo para leitura e informa explicitamente que ele não é transcrição.
+Conteúdo premium não é apenas escondido no cliente. A página consulta autorização no servidor; mídia aprovada é servida por rota protegida e storage privado.
 
-## Acessibilidade
+## Dados
 
-Alvo do projeto: WCAG 2.2 AA.
+O banco V2.5 possui apenas dados operacionais do produto:
 
-A interface inclui navegação por teclado, foco visível, redução de movimento, layout responsivo, conteúdo textual complementar e controles próprios de áudio. A transcrição integral dos áudios legados permanece como pendência editorial até validação humana.
+- usuários;
+- conteúdos e versões;
+- mídia;
+- entitlements;
+- progresso;
+- favoritos;
+- compras;
+- auditoria.
 
-## Privacidade
+Não existe tabela de prontuário ou notas terapêuticas.
 
-A página pública não deve armazenar dados clínicos, diagnósticos, respostas terapêuticas ou identificação do paciente. Favoritos, posições de áudio e conclusão são locais ao dispositivo e não são enviados a servidor pela aplicação atual.
+Sem conta, o conteúdo livre continua funcionando e progresso/favoritos podem permanecer em `localStorage`. Com conta e infraestrutura provisionada, esses estados são sincronizados.
 
-## Roadmap
+## Fábrica de áudio
 
-- revisar e transcrever integralmente os oito áudios legados;
-- normalizar loudness e cadeia de voz do acervo;
-- produzir microvídeos apenas para conceitos que realmente ganham com visualização;
-- adicionar testes automatizados de HTML, JSON, links e acessibilidade;
-- avaliar service worker após estabilização do catálogo;
-- integrar futuramente com a plataforma clínica apenas por IDs de conteúdo, mantendo dados do paciente fora do site público.
+O catálogo possui 20 roteiros V2.5 em `content/audio/scripts/`. Os oito MP3 históricos estão explicitamente marcados para reescrita/substituição; nenhum deles é considerado master V2.5.
+
+Fluxo:
+
+```text
+roteiro aprovado
+→ gravação/TTS WAV
+→ edição
+→ master em dois passes
+→ QC automático
+→ escuta humana
+→ transcrição reconciliada
+→ Blob privado
+→ media_assets.qc_status = approved
+→ audioState = master-approved
+```
+
+Alvo interno atual: `-16 LUFS`, true peak `≤ -1 dBTP`, LRA de referência `7`.
+
+### Renderizar uma pílula
+
+```bash
+OPENAI_API_KEY=... pnpm audio:build pr-001
+```
+
+### Renderizar as 20
+
+Há uma trava explícita para evitar custo TTS acidental:
+
+```bash
+OPENAI_API_KEY=... pnpm audio:build --all --confirm-cost
+```
+
+### QC
+
+```bash
+pnpm audio:qc
+```
+
+O QC falha para arquivo ausente, duração anômala, loudness fora do alvo, peak excessivo ou silêncio interno excessivo. Aprovação automática não substitui escuta humana.
+
+## Vídeo
+
+`apps/video` contém um template Remotion reutilizável em 16:9 e 9:16. A mesma linguagem de cores, tipografia e fluxo conceitual da web é reutilizada nos vídeos.
+
+```bash
+pnpm install
+pnpm video:studio
+```
+
+Os vídeos só devem ser renderizados quando narração, duração e conteúdo estiverem aprovados.
+
+## Desenvolvimento
+
+```bash
+pnpm install
+pnpm validate
+pnpm typecheck
+pnpm dev
+```
+
+Variáveis necessárias estão documentadas em `apps/web/.env.example`.
+
+## Banco
+
+Migração inicial:
+
+- `apps/web/drizzle/0000_v25_initial.sql`
+
+Seed dos 20 conteúdos:
+
+- `apps/web/db/seed-content.sql`
+
+## Staging e produção
+
+Ambientes previstos:
+
+- development;
+- staging;
+- production.
+
+O branch foi preparado para Vercel, mas um projeto Vercel e as integrações externas precisam ser provisionados antes que login, banco, checkout e Blob funcionem de ponta a ponta.
+
+## Gates de lançamento comercial
+
+Não ativar cobrança real nem fazer merge da V2.5 para produção enquanto não houver:
+
+1. projeto de staging provisionado;
+2. Clerk, banco, Stripe sandbox e Blob configurados;
+3. 20/20 áudios renderizados/gravados, masterizados e aprovados humanamente;
+4. 20/20 transcrições reconciliadas com os masters;
+5. substituição dos oito MP3 legados;
+6. testes de acesso `free/premium/patient/institutional`;
+7. cancelamento e webhook testados;
+8. QA mobile/desktop/teclado/leitor de tela;
+9. identificação profissional validada e inserida;
+10. revisão jurídica final de privacidade, termos, compra/reembolso e faixa etária;
+11. beta controlado antes de distribuição comercial ampla.
+
+## CI
+
+Dois workflows convivem no branch:
+
+- `Quality` — valida a versão estática herdada;
+- `V2.5 Commercial & Audio Gate` — valida 20 conteúdos/roteiros, estrutura multimodal, typecheck e build Next.js.
+
+## Princípio de governança
+
+Nova mídia só recebe status de publicada quando existe de fato e passou pelos gates técnicos e humanos. A aplicação não cria links fictícios nem expõe conteúdo premium apenas por ocultação no frontend.
