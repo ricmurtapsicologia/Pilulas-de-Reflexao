@@ -1,0 +1,74 @@
+name: Audio V3 — Kokoro Production Main Trigger
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/audio/KOKORO_PRODUCTION_REQUEST_MAIN'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: audio-v3-kokoro-production-main
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout V3
+        uses: actions/checkout@v4
+        with:
+          ref: v3-multimodal-audio
+          fetch-depth: 0
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Dependências do sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg espeak-ng
+
+      - name: Instalar Kokoro
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'kokoro>=0.9.2' soundfile numpy
+
+      - name: Gerar 20 fontes neurais pt-BR
+        run: |
+          IDS=$(printf 'pr-%03d ' $(seq 1 20))
+          python scripts/render-tts-kokoro.py $IDS --voice pm_alex
+
+      - name: Masterizar 20 áudios
+        run: |
+          for n in $(seq -w 1 20); do
+            id="pr-0${n}"
+            node scripts/audio-master.mjs "media/source/${id}-kokoro-pm_alex.wav" "$id"
+          done
+
+      - name: Publicar manifesto técnico
+        run: python scripts/publish-kokoro-manifest.py
+
+      - name: QC técnico integral
+        run: node scripts/audio-qc.mjs
+
+      - name: Verificação estrutural V3
+        run: node tests/validate-v3.mjs
+
+      - name: Persistir masters e manifesto no branch V3
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/audio/pr-*-v3.mp3 assets/audio/pr-*-v3.wav data/audio-v3.json
+          git commit -m 'audio(v3): gera 20 masters Kokoro pt-BR com QC técnico'
+          git push origin HEAD:v3-multimodal-audio
