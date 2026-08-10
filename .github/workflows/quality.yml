@@ -1,0 +1,30 @@
+name: Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate catalog and media references
+        run: python scripts/validate.py
+
+      - name: Validate JSON syntax
+        run: python -m json.tool data/pilulas.json > /dev/null
+
+      - name: Validate HTML
+        run: npx --yes html-validate@9 index.html
