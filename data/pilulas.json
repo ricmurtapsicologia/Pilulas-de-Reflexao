@@ -1,0 +1,167 @@
+{
+  "version": "2.0.0",
+  "updatedAt": "2026-08-09",
+  "tracks": [
+    {"id":"pensamentos","name":"Pensamentos","description":"Perceber pensamentos com mais clareza e responder a eles com mais flexibilidade."},
+    {"id":"emocoes","name":"Emoções","description":"Reconhecer emoções, compreender sua função e ampliar possibilidades de resposta."},
+    {"id":"acao","name":"Ação e comportamento","description":"Transformar compreensão em pequenas ações possíveis no cotidiano."},
+    {"id":"regulacao","name":"Presença e regulação","description":"Práticas breves para orientar atenção, desacelerar e recuperar espaço de escolha."},
+    {"id":"autoconhecimento","name":"Autoconhecimento","description":"Explorar valores, padrões e formas de se relacionar consigo."},
+    {"id":"cotidiano","name":"Vida cotidiana","description":"Reflexões sobre comparação, tédio, rotina, relações e presença."}
+  ],
+  "needs": [
+    {"id":"mente-acelerada","label":"Minha mente não desacelera","items":["pr-013","pr-003","pr-004"]},
+    {"id":"pensando-demais","label":"Estou pensando demais","items":["pr-001","pr-004","pr-005"]},
+    {"id":"inseguro","label":"Estou inseguro","items":["pr-009","pr-010","pr-019"]},
+    {"id":"desanimado","label":"Estou desanimado","items":["pr-010","pr-012","pr-018"]},
+    {"id":"evitando","label":"Estou evitando alguma coisa","items":["pr-011","pr-010","pr-012"]},
+    {"id":"irritado","label":"Estou irritado","items":["pr-008","pr-015","pr-014"]},
+    {"id":"organizar","label":"Quero organizar meus pensamentos","items":["pr-002","pr-001","pr-005"]},
+    {"id":"pausa","label":"Quero apenas fazer uma pausa","items":["pr-013","pr-014","pr-017"]}
+  ],
+  "items": [
+    {
+      "id":"pr-001","slug":"pensamento-nao-e-fato","title":"Pensamento não é fato","shortTitle":"Pensamento ≠ fato","track":"pensamentos","skill":"distanciamento cognitivo","duration":"3 min","format":"texto+microvisual","status":"published",
+      "description":"Uma introdução breve para perceber a diferença entre aquilo que sua mente produz e aquilo que os fatos sustentam.",
+      "reading":["A mente interpreta o tempo todo. Ela preenche lacunas, antecipa possibilidades e tenta dar sentido ao que acontece. Isso é útil, mas uma interpretação pode parecer tão convincente que passa a ser tratada como fato.","Quando um pensamento vier acompanhado de certeza, experimente separar três coisas: o que aconteceu, o que você pensou sobre isso e quais evidências realmente possui. O objetivo não é pensar positivo. É pensar com mais precisão.","Uma frase útil é: ‘Estou percebendo o pensamento de que...’. Esse pequeno deslocamento pode criar espaço entre você e a primeira interpretação que apareceu."],
+      "reflection":"Qual pensamento você tratou hoje como fato antes de verificar as evidências?",
+      "visual":{"title":"Do acontecimento à resposta","steps":["Acontecimento","Interpretação","Emoção","Ação"]}
+    },
+    {
+      "id":"pr-002","slug":"registro-de-pensamentos","title":"Registro de pensamentos na prática","shortTitle":"Registro de pensamentos","track":"pensamentos","skill":"monitoramento cognitivo","duration":"áudio","format":"audio","status":"published",
+      "description":"Use um registro simples para organizar situação, pensamentos, emoções e respostas sem transformar a reflexão em julgamento.",
+      "audioUrl":"./PODCAST%20000%20REGISTRO%20DE%20PENSAMENTOS%20DISFUNCIONAIS.mp3",
+      "reading":["O registro de pensamentos ajuda a desacelerar uma experiência que, por dentro, costuma acontecer muito rápido. Situação, interpretação, emoção e comportamento podem se misturar como se fossem uma única coisa.","Ao registrar, procure descrever primeiro o que aconteceu de forma observável. Depois anote o pensamento que apareceu, a emoção e o que você fez. Só então explore outras interpretações possíveis."],
+      "reflection":"Se você registrasse apenas uma situação de hoje, qual escolheria?",
+      "transcriptStatus":"review"
+    },
+    {
+      "id":"pr-003","slug":"quando-um-pensamento-nao-vai-embora","title":"Quando um pensamento não vai embora","shortTitle":"Pensamentos persistentes","track":"pensamentos","skill":"flexibilidade cognitiva","duration":"áudio","format":"audio","status":"published",
+      "description":"Uma reflexão sobre pensamentos persistentes e sobre como mudar a relação com eles sem precisar vencer uma disputa mental.",
+      "audioUrl":"./PODCAST%20002%20LIDANDO%20COM%20PENSAMENTOS%20DE%20CONTROLE.mp3",
+      "reading":["Quanto mais urgente parece a necessidade de expulsar um pensamento, mais atenção ele pode receber. Em vez de discutir com ele imediatamente, experimente reconhecê-lo como um evento mental.","Você não precisa concordar com um pensamento para notar que ele apareceu. Também não precisa obedecê-lo. Observe, nomeie e escolha o que merece sua atenção agora."],
+      "reflection":"O que muda quando você troca ‘preciso parar de pensar nisso’ por ‘percebo que minha mente voltou a esse assunto’?",
+      "transcriptStatus":"review"
+    },
+    {
+      "id":"pr-004","slug":"ruminacao-quando-pensar-nao-ajuda","title":"Ruminação: quando pensar deixa de ajudar","shortTitle":"Ruminação","track":"pensamentos","skill":"metacognição","duration":"3 min","format":"texto+microvisual","status":"published",
+      "description":"Diferencie reflexão útil de repetição mental que gira em torno do problema sem produzir direção.",
+      "reading":["Refletir pode produzir compreensão, decisão ou ação. Ruminar costuma produzir repetição. A mesma pergunta retorna, novas respostas parecem insuficientes e a sensação de urgência aumenta.","Quando perceber esse ciclo, pergunte: existe alguma ação concreta e proporcional que posso realizar agora? Se sim, defina o menor próximo passo. Se não, experimente encerrar provisoriamente a análise e devolver atenção ao que está diante de você."],
+      "reflection":"Este pensamento está me aproximando de uma ação possível ou apenas repetindo a mesma pergunta?",
+      "visual":{"title":"Uma pergunta para interromper o ciclo","steps":["Percebo a repetição","Existe ação possível?","Sim: próximo passo","Não: retorno ao presente"]}
+    },
+    {
+      "id":"pr-005","slug":"conviver-com-a-incerteza","title":"Quando não existe certeza suficiente","shortTitle":"Incerteza","track":"pensamentos","skill":"tolerância à incerteza","duration":"3 min","format":"texto","status":"published",
+      "description":"Uma prática para reconhecer quando a busca por certeza deixa de proteger e começa a consumir energia.",
+      "reading":["Buscar informação pode ser útil. Buscar certeza absoluta, muitas vezes, não tem um ponto claro de chegada. Sempre pode existir mais uma pergunta, mais uma checagem ou mais um cenário possível.","Experimente definir qual nível de informação é suficiente para uma decisão razoável. Depois observe o desconforto de não saber tudo sem transformar esse desconforto em nova checagem automática."],
+      "reflection":"Qual decisão sua está esperando uma certeza que talvez não exista?"
+    },
+    {
+      "id":"pr-006","slug":"ansiedade-o-corpo-em-alerta","title":"Ansiedade: o corpo em alerta","shortTitle":"Ansiedade e alerta","track":"emocoes","skill":"psicoeducação emocional","duration":"4 min","format":"texto+microvisual","status":"published",
+      "description":"Entenda como percepção de ameaça, corpo, atenção e interpretação podem se alimentar mutuamente.",
+      "reading":["A ansiedade envolve um sistema de proteção. Quando uma ameaça é percebida, o corpo pode aumentar ativação, a atenção fica mais sensível a sinais de perigo e pensamentos de antecipação ganham força.","O problema não é sentir qualquer ativação. É quando o próprio sinal de ansiedade passa a ser interpretado como prova de que algo terrível está prestes a acontecer. Nomear o ciclo ajuda a criar espaço para uma resposta mais proporcional."],
+      "reflection":"Quando você fica ansioso, qual sinal do corpo costuma captar primeiro?",
+      "visual":{"title":"O ciclo do alerta","steps":["Ameaça percebida","Ativação corporal","Atenção ao perigo","Interpretação ameaçadora"]}
+    },
+    {
+      "id":"pr-007","slug":"quando-a-tristeza-pede-espaco","title":"Quando a tristeza pede espaço","shortTitle":"Tristeza","track":"emocoes","skill":"aceitação emocional","duration":"3 min","format":"texto","status":"published",
+      "description":"Uma reflexão breve para reconhecer tristeza sem exigir que ela desapareça imediatamente.",
+      "reading":["Nem toda tristeza é um problema a ser resolvido no mesmo instante. Algumas experiências pedem reconhecimento, tempo e cuidado antes de qualquer tentativa de mudança.","Em vez de perguntar apenas ‘como faço isso passar?’, experimente perguntar ‘o que esta emoção está sinalizando?’ e ‘de que tipo de cuidado preciso agora?’. Isso não significa se entregar à tristeza; significa escutá-la com mais precisão."],
+      "reflection":"Se sua tristeza pudesse pedir um cuidado concreto hoje, qual seria?"
+    },
+    {
+      "id":"pr-008","slug":"antes-da-irritacao-explodir","title":"Antes da irritação explodir","shortTitle":"Irritação","track":"emocoes","skill":"regulação emocional","duration":"3 min","format":"texto","status":"published",
+      "description":"Identifique sinais iniciais de irritação para aumentar o espaço entre impulso e resposta.",
+      "reading":["A explosão raramente é o primeiro sinal. Tensão muscular, aceleração da fala, aumento do volume da voz, pensamentos absolutos ou urgência para responder podem surgir antes.","Aprender a reconhecer esses sinais não elimina o motivo da irritação. Apenas devolve alguns segundos de escolha. Às vezes, adiar uma resposta por poucos minutos é mais eficaz do que tentar vencer uma conversa no auge da ativação."],
+      "reflection":"Qual é o seu sinal mais precoce de que a irritação está aumentando?"
+    },
+    {
+      "id":"pr-009","slug":"inseguranca-e-confianca","title":"Insegurança não precisa decidir por você","shortTitle":"Insegurança","track":"emocoes","skill":"autoeficácia","duration":"áudio","format":"audio","status":"published",
+      "description":"Uma reflexão sobre confiança como algo que também se constrói pela experiência, e não apenas como condição para agir.",
+      "audioUrl":"./PODCAST%20005%20SUPERANDO%20INSEGURAN%C3%87A.mp3",
+      "reading":["Esperar sentir segurança completa antes de agir pode transformar insegurança em regra. Em muitas situações, confiança aumenta depois que acumulamos experiências de enfrentamento proporcional.","A pergunta útil não é ‘como deixo de sentir insegurança?’, mas ‘qual passo é possível mesmo com alguma insegurança presente?’."],
+      "reflection":"Qual ação pequena você vem adiando até se sentir totalmente confiante?",
+      "transcriptStatus":"review"
+    },
+    {
+      "id":"pr-010","slug":"aja-antes-de-se-sentir-pronto","title":"Aja antes de se sentir totalmente pronto","shortTitle":"Começar antes da confiança","track":"acao","skill":"experimento comportamental","duration":"áudio","format":"audio","status":"published",
+      "description":"Uma releitura comportamental da ideia de agir antes que motivação ou confiança estejam completas.",
+      "audioUrl":"./PODCAST%20006%20FINJA%20AT%C3%89%20SER%20VERDADE.mp3",
+      "reading":["Agir não precisa significar fingir quem você é. Pode significar testar um comportamento novo antes de ter certeza de que ele dará certo.","Escolha uma ação pequena, observável e reversível. Execute-a como experimento. Depois compare o que você previa com o que realmente aconteceu. É assim que experiência pode atualizar crenças."],
+      "reflection":"Qual comportamento você poderia testar como experimento, sem exigir perfeição?",
+      "transcriptStatus":"review"
+    },
+    {
+      "id":"pr-011","slug":"o-ciclo-da-evitacao","title":"O ciclo da evitação","shortTitle":"Evitação","track":"acao","skill":"exposição gradual","duration":"4 min","format":"texto+microvisual","status":"published",
+      "description":"Veja por que evitar pode aliviar agora e, ao mesmo tempo, fortalecer o medo ou a dificuldade depois.",
+      "reading":["Evitar costuma funcionar no curto prazo: o desconforto cai. É justamente esse alívio que pode ensinar ao cérebro que a fuga foi necessária para ficar seguro.","Com o tempo, situações antes toleráveis podem parecer maiores. A alternativa não é se jogar no pior cenário, mas construir aproximações graduais, proporcionais e repetidas."],
+      "reflection":"Qual situação você evita porque o alívio imediato parece valer mais do que o custo futuro?",
+      "visual":{"title":"Como a evitação se fortalece","steps":["Desconforto","Evito","Alívio imediato","Evitação fica mais provável"]}
+    },
+    {
+      "id":"pr-012","slug":"procrastinacao-e-o-proximo-passo","title":"Procrastinação e o próximo passo","shortTitle":"Procrastinação","track":"acao","skill":"ativação comportamental","duration":"3 min","format":"texto","status":"published",
+      "description":"Reduza uma tarefa grande até encontrar uma ação pequena o suficiente para começar.",
+      "reading":["Muitas tarefas parecem impossíveis porque são representadas mentalmente como um bloco único. ‘Fazer o relatório’ pode significar dezenas de decisões diferentes.","Troque o projeto inteiro pela próxima ação física e observável: abrir o arquivo, escrever três tópicos, separar os documentos. Começar não resolve tudo, mas muda a tarefa de imaginada para concreta."],
+      "reflection":"Qual é a menor ação visível que inicia a tarefa que você está adiando?"
+    },
+    {
+      "id":"pr-013","slug":"retornar-ao-presente","title":"Uma pausa para retornar ao presente","shortTitle":"Meditação guiada","track":"regulacao","skill":"atenção plena","duration":"áudio","format":"audio","status":"published",
+      "description":"Uma prática guiada breve para orientar a atenção ao momento presente sem obrigação de esvaziar a mente.",
+      "audioUrl":"./PODCAST%20007%20MEDITA%C3%87%C3%83O%20GUIADA.mp3",
+      "reading":["A prática não exige impedir pensamentos. O objetivo é perceber quando a atenção se afasta e experimentar trazê-la de volta, com menos luta.","Você pode usar respiração, sons ou sensações corporais como pontos de referência. Se a prática aumentar desconforto, interrompa e escolha outra forma de se orientar ao ambiente."],
+      "reflection":"Qual ponto de referência ajuda você a perceber que está aqui, agora?",
+      "transcriptStatus":"review"
+    },
+    {
+      "id":"pr-014","slug":"aterramento-pelos-sentidos","title":"Aterramento pelos sentidos","shortTitle":"Aterramento","track":"regulacao","skill":"orientação sensorial","duration":"3 min","format":"texto","status":"published",
+      "description":"Use o ambiente como âncora quando sua atenção estiver excessivamente presa a pensamentos ou sensações internas.",
+      "reading":["Aterramento é uma forma de orientar deliberadamente a atenção ao ambiente presente. Observe detalhes concretos: formas, temperaturas, texturas, sons e pontos de contato do corpo.","Não precisa transformar isso em contagem rígida. O essencial é trocar, por alguns instantes, a atenção abstrata pela informação sensorial que está disponível agora."],
+      "reflection":"Qual detalhe do ambiente você não tinha percebido até alguns segundos atrás?"
+    },
+    {
+      "id":"pr-015","slug":"pausa-entre-impulso-e-acao","title":"Uma pausa entre impulso e ação","shortTitle":"Pausa e escolha","track":"regulacao","skill":"controle inibitório","duration":"3 min","format":"texto+microvisual","status":"published",
+      "description":"Crie uma pequena janela de escolha antes de responder automaticamente a um impulso.",
+      "reading":["Impulso não é ordem. Ele é informação acompanhada de urgência. Quanto maior a ativação, menor pode parecer o espaço entre sentir vontade e agir.","Treine uma sequência curta: perceber, nomear, pausar e escolher. A pausa pode durar poucos segundos. O objetivo não é eliminar o impulso, mas impedir que ele decida sozinho."],
+      "reflection":"Em qual situação alguns segundos de pausa fariam diferença para você?",
+      "visual":{"title":"Da urgência à escolha","steps":["Percebo","Nomeio","Pauso","Escolho"]}
+    },
+    {
+      "id":"pr-016","slug":"fomo-e-comparacao","title":"FOMO: quando parece que todos estão vivendo mais","shortTitle":"FOMO","track":"cotidiano","skill":"comparação social consciente","duration":"áudio","format":"audio","status":"published",
+      "description":"Uma reflexão sobre medo de ficar de fora, comparação social e retorno àquilo que realmente merece sua presença.",
+      "audioUrl":"./PODCAST%20003%20LIDANDO%20COM%20FOMO.mp3",
+      "reading":["Quando vemos recortes selecionados da vida de outras pessoas, podemos compará-los com a experiência completa da nossa própria vida. Essa comparação é estruturalmente desigual.","Pergunte menos ‘o que estou perdendo?’ e mais ‘o que estou deixando de perceber enquanto acompanho o que os outros fazem?’."],
+      "reflection":"O que merece mais presença sua do que comparação neste momento?",
+      "transcriptStatus":"review"
+    },
+    {
+      "id":"pr-017","slug":"tedio-e-inquietacao","title":"Quando tudo parece tédio ou inquietação","shortTitle":"Tédio e inquietação","track":"cotidiano","skill":"tolerância ao desconforto","duration":"áudio","format":"audio","status":"published",
+      "description":"Use o pêndulo de Schopenhauer como lente para refletir sobre desejo, satisfação, tédio e inquietação sem transformar a ideia em destino.",
+      "audioUrl":"./PODCAST%20004%20LIDANDO%20COM%20O%20T%C3%89DIO.mp3",
+      "reading":["A metáfora do pêndulo pode ajudar a perceber como buscamos estímulo quando o vazio incomoda e descanso quando o excesso cansa. Ela é uma lente filosófica, não uma regra sobre como a vida precisa ser.","Em vez de fugir automaticamente do tédio, experimente observar o que aparece quando não há estímulo imediato. Às vezes surgem necessidades, interesses ou cansaço que estavam sendo encobertos."],
+      "reflection":"O que costuma aparecer quando você não preenche imediatamente o silêncio ou o tédio?",
+      "transcriptStatus":"review"
+    },
+    {
+      "id":"pr-018","slug":"renovar-o-domingo","title":"Fechando o domingo com menos cobrança","shortTitle":"Domingo à noite","track":"cotidiano","skill":"transição de rotina","duration":"áudio","format":"audio","status":"published",
+      "description":"Uma pausa de fim de domingo para organizar expectativas e entrar na semana com menos sensação de cobrança acumulada.",
+      "audioUrl":"./PODCAST%20001%20OUVIR%20NO%20FINAL%20DE%20DOMINGO.mp3",
+      "reading":["Domingo à noite pode concentrar antecipações sobre tudo o que ainda não aconteceu. Organizar a semana ajuda; tentar viver mentalmente todos os dias de uma vez costuma aumentar o peso.","Escolha apenas o primeiro compromisso relevante de amanhã e uma ação simples de preparação. O restante pode continuar sendo segunda-feira quando segunda-feira chegar."],
+      "reflection":"O que realmente precisa estar decidido hoje — e o que pode esperar até amanhã?",
+      "transcriptStatus":"review"
+    },
+    {
+      "id":"pr-019","slug":"valores-nao-sao-metas","title":"Valores não são metas","shortTitle":"Valores × metas","track":"autoconhecimento","skill":"clarificação de valores","duration":"4 min","format":"texto+microvisual","status":"published",
+      "description":"Diferencie destinos específicos de direções de vida que podem orientar escolhas repetidas.",
+      "reading":["Uma meta pode ser concluída: terminar um curso, correr uma prova, entregar um projeto. Um valor funciona mais como direção: aprender, cuidar, contribuir, criar, manter relações significativas.","Metas podem servir aos valores, mas não são a mesma coisa. Quando uma meta falha, o valor ainda pode orientar o próximo movimento."],
+      "reflection":"Qual direção você gostaria que aparecesse mais claramente nas suas escolhas desta semana?",
+      "visual":{"title":"Duas funções diferentes","steps":["Valor: direção","Escolhas repetidas","Meta: marco concreto","Nova escolha"]}
+    },
+    {
+      "id":"pr-020","slug":"o-critico-dentro-da-cabeca","title":"O crítico dentro da cabeça","shortTitle":"Autocrítica","track":"autoconhecimento","skill":"autocompaixão responsável","duration":"4 min","format":"texto+microvisual","status":"published",
+      "description":"Observe a diferença entre uma crítica que orienta correção e uma voz interna que transforma erro em identidade.",
+      "reading":["Autocrítica pode parecer uma estratégia para evitar acomodação: ‘se eu for duro comigo, vou melhorar’. O problema surge quando a avaliação deixa de ser sobre comportamento e passa a definir a pessoa inteira.","Responsabilidade e autocompaixão não são opostos. Você pode reconhecer um erro, reparar o que for possível e ainda assim falar consigo de um modo que favoreça aprendizagem em vez de paralisia."],
+      "reflection":"Se você mantivesse a responsabilidade, mas retirasse a humilhação, o que diria a si mesmo?",
+      "visual":{"title":"Da crítica à aprendizagem","steps":["Algo deu errado","Autocrítica global","Pausa","Responsabilidade + próximo passo"]}
+    }
+  ]
+}
