@@ -1,0 +1,27 @@
+{
+  "version":"2.5.0",
+  "targets":{"integratedLufs":-16,"truePeakDbtp":-1,"lra":7,"distributionCodec":"mp3","distributionBitrate":"128k"},
+  "voice":{"language":"pt-BR","profile":"adulto, natural, próximo, não publicitário","defaultWpm":[140,155],"guidedWpm":[110,125]},
+  "items":[
+    {"id":"pr-001","slug":"pensamento-nao-e-fato","source":"new","output":"pr-001-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-002","slug":"registro-de-pensamentos","source":"legacy:PODCAST 000 REGISTRO DE PENSAMENTOS DISFUNCIONAIS.mp3","output":"pr-002-v2.5.mp3","status":"rewrite-required"},
+    {"id":"pr-003","slug":"quando-um-pensamento-nao-vai-embora","source":"legacy:PODCAST 002 LIDANDO COM PENSAMENTOS DE CONTROLE.mp3","output":"pr-003-v2.5.mp3","status":"rewrite-required"},
+    {"id":"pr-004","slug":"ruminacao-quando-pensar-nao-ajuda","source":"new","output":"pr-004-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-005","slug":"conviver-com-a-incerteza","source":"new","output":"pr-005-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-006","slug":"ansiedade-o-corpo-em-alerta","source":"new","output":"pr-006-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-007","slug":"quando-a-tristeza-pede-espaco","source":"new","output":"pr-007-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-008","slug":"antes-da-irritacao-explodir","source":"new","output":"pr-008-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-009","slug":"inseguranca-e-confianca","source":"legacy:PODCAST 005 SUPERANDO INSEGURANÇA.mp3","output":"pr-009-v2.5.mp3","status":"rewrite-required"},
+    {"id":"pr-010","slug":"aja-antes-de-se-sentir-pronto","source":"legacy:PODCAST 006 FINJA ATÉ SER VERDADE.mp3","output":"pr-010-v2.5.mp3","status":"rewrite-required"},
+    {"id":"pr-011","slug":"o-ciclo-da-evitacao","source":"new","output":"pr-011-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-012","slug":"procrastinacao-e-o-proximo-passo","source":"new","output":"pr-012-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-013","slug":"retornar-ao-presente","source":"legacy:PODCAST 007 MEDITAÇÃO GUIADA.mp3","output":"pr-013-v2.5.mp3","status":"rewrite-required"},
+    {"id":"pr-014","slug":"aterramento-pelos-sentidos","source":"new","output":"pr-014-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-015","slug":"pausa-entre-impulso-e-acao","source":"new","output":"pr-015-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-016","slug":"fomo-e-comparacao","source":"legacy:PODCAST 003 LIDANDO COM FOMO.mp3","output":"pr-016-v2.5.mp3","status":"rewrite-required"},
+    {"id":"pr-017","slug":"tedio-e-inquietacao","source":"legacy:PODCAST 004 LIDANDO COM O TÉDIO.mp3","output":"pr-017-v2.5.mp3","status":"rewrite-required"},
+    {"id":"pr-018","slug":"renovar-o-domingo","source":"legacy:PODCAST 001 OUVIR NO FINAL DE DOMINGO.mp3","output":"pr-018-v2.5.mp3","status":"rewrite-required"},
+    {"id":"pr-019","slug":"valores-nao-sao-metas","source":"new","output":"pr-019-v2.5.mp3","status":"script-approved"},
+    {"id":"pr-020","slug":"o-critico-dentro-da-cabeca","source":"new","output":"pr-020-v2.5.mp3","status":"script-approved"}
+  ]
+}
