@@ -1,0 +1,7 @@
+production-requested-at: 2026-08-10T03:20:00Z
+source-branch: v3-multimodal-audio
+voice: pm_alex
+model: hexgrad/Kokoro-82M
+language: pt-BR
+scope: pr-001..pr-020
+quality: premium
