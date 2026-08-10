@@ -1,0 +1,21 @@
+name: V3 Quality
+
+on:
+  push:
+    branches: [v3-multimodal-audio]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validar catálogo, roteiros e JavaScript
+        run: npm run validate
