@@ -1,0 +1,6 @@
+media/work/
+media/source/
+assets/audio/*.wav
+.env
+.env.*
+!.env.example

@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>Pílulas de Reflexão | Richelmy Murta Psicologia</title>
-  <meta name="description" content="Microexperiências psicoeducativas em áudio, texto e recursos visuais para compreender pensamentos, emoções e pequenas possibilidades de ação.">
+  <meta name="description" content="Microexperiências psicoeducativas em áudio, leitura, prática e recursos visuais para compreender pensamentos, emoções e pequenas possibilidades de ação.">
   <meta name="theme-color" content="#234a42">
   <meta name="color-scheme" content="light">
   <meta name="robots" content="index,follow">
@@ -14,10 +14,11 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Pílulas de Reflexão">
-  <meta property="og:description" content="Alguns minutos para compreender melhor o que acontece dentro de você — e experimentar uma forma diferente de responder.">
+  <meta property="og:description" content="Escute, compreenda e experimente. Pílulas breves para criar espaço entre o que acontece e a forma de responder.">
   <meta property="og:url" content="https://ricmurtapsicologia.github.io/Pilulas-de-Reflexao/">
-  <link rel="stylesheet" href="./assets/css/styles.css">
-  <script src="./assets/js/app.js" defer></script>
+  <link rel="stylesheet" href="./assets/css/styles.css?v=3.0.0">
+  <link rel="stylesheet" href="./assets/css/v3.css?v=3.0.0">
+  <script src="./assets/js/app.js?v=3.0.0" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -53,7 +54,7 @@
           <p class="section-kicker">Comece pelo que faz sentido</p>
           <h2 id="need-title">Como você está chegando aqui?</h2>
           <p>Escolha uma situação cotidiana. A indicação organiza conteúdos; não faz diagnóstico.</p>
-          <div class="need-grid" id="need-grid" aria-label="Necessidades atuais"></div>
+          <div class="need-grid" id="need-grid" role="group" aria-label="Necessidades atuais"></div>
         </aside>
       </div>
     </section>
@@ -85,6 +86,7 @@
         <div class="track-grid" id="track-grid"></div>
         <aside class="progress-panel" id="progress-panel" aria-label="Seu progresso neste dispositivo">
           <div class="progress-row"><strong>Sua jornada neste dispositivo</strong><span id="progress-label">0 experiências concluídas</span></div>
+          <!-- [html-validate-disable-next prefer-native-element] -->
           <div class="progress-track" role="progressbar" aria-label="Progresso geral" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" id="progress-bar"></div></div>
           <p class="micro-note">Esse progresso fica somente neste navegador. Não há conta, ranking, sequência obrigatória ou envio de dados clínicos.</p>
         </aside>
@@ -97,13 +99,13 @@
           <div>
             <p class="section-kicker">Biblioteca</p>
             <h2 id="library-title">Encontre uma pílula</h2>
-            <p class="section-intro">Áudios existentes foram preservados. Novos conteúdos entram como leitura e microvisual até que sua mídia própria esteja validada.</p>
+            <p class="section-intro">Cada pílula combina compreensão, exemplo cotidiano e uma prática breve. Os áudios existentes permanecem disponíveis enquanto a nova identidade sonora é produzida e validada.</p>
           </div>
           <span class="micro-note" id="result-count" aria-live="polite"></span>
         </div>
         <div class="library-tools">
           <label class="search-wrap"><span class="sr-only">Buscar pílulas</span><input id="search" type="search" inputmode="search" autocomplete="off" placeholder="Buscar por tema, habilidade ou palavra…"></label>
-          <div class="filters" id="filters" aria-label="Filtrar por trilha"></div>
+          <div class="filters" id="filters" role="group" aria-label="Filtrar por trilha"></div>
         </div>
         <div class="catalog" id="catalog" aria-live="polite"><div class="empty-state">Carregando biblioteca…</div></div>
       </div>

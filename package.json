@@ -1,0 +1,14 @@
+{
+  "name": "pilulas-de-reflexao-v3",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node tests/validate-v3.mjs",
+    "audio:render": "node scripts/render-tts-openai.mjs",
+    "audio:master": "node scripts/audio-master.mjs",
+    "audio:qc": "node scripts/audio-qc.mjs",
+    "audio:pilot": "node scripts/audio-build.mjs pr-001 pr-008 pr-013",
+    "audio:all": "node scripts/audio-build.mjs --all --confirm-cost"
+  }
+}
